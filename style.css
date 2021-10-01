@@ -1,0 +1,84 @@
+:root {
+    --color-bg: Khaki;
+    --color-gear: #222;
+}
+
+html {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: var(--color-bg);
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+}
+
+#gear {
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-gear);
+    background-image: 
+        radial-gradient( circle at 10px 10px, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient( circle at center -15px, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient(circle at 140px 10px, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient( circle at -15px center, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient( circle at center center, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient( circle at 165px center, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient(circle at left top, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient(circle at 10px 140px, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient( circle at center 165px, 
+            var(--color-bg) 30px, transparent 30px), 
+        radial-gradient(circle at 140px 140px, 
+            var(--color-bg) 30px, transparent 30px);
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+
+#gearbox {
+    width: 200px;
+    height: 90px;
+    background: radial-gradient(circle, silver 20px, transparent 20px), black;
+    position: absolute;
+    left: -25px;
+    top: 30px;
+    border-radius: 30px;
+    transform: rotate(25deg);
+    z-index: 1;
+    cursor: pointer;
+}
+
+#gearbox:before {
+    content: "";
+    width: 150vw;
+    height: 10px;
+    background: linear-gradient(to bottom, #111, #222, #111);
+    position: absolute;
+    top: 40px;
+    left: -50vw;
+}
+
+#gearbox:after {
+    content: "\00D7";
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #777 10px, transparent 15px), radial-gradient(circle, #555 17px, transparent 17px), linear-gradient(to bottom, #111, #222, #111);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    text-align: center;
+    line-height: 90px;
+    font-size: 24px;
+    font-weight: 900;
+    color: dimgray;
+}
